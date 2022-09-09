@@ -162,6 +162,75 @@ node /tmp/xDzzoHCIuC.js
 
 
 
+--------------------------------------------------------------------------------------------------
+
+
+GIT COMMANDS TO PUSH STUFF (directory)
+
+
+
+
+
+cd ... --> to locate and go to the folder
+
+
+
+git init
+
+
+git status (shows status)
+
+
+git add . (all) or specify file name
+
+
+git commit -m "first push"
+
+
+git remote add origin https://github.com/MertArkin/SaveHighlightedText.git
+
+
+[
+the push commands changed, i was able to push with 
+
+]
+
+
+
+
+
+
+
+
+
+EXTRA COMMANDS
+
+git remote -v
+
+shows which links to use for (fetch and push)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -44,6 +44,9 @@ result.then(
             message = [...a.savedText];
         }
         console.log(message);
+
+        //saved - stored
+        
         //localStorage.setItem('savedText', a);
         chrome.runtime.sendMessage(message);
     },
