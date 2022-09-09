@@ -1,0 +1,35 @@
+
+//Comment this file !
+{
+  "name": "SaveOn",
+  "version": "1.0.0",
+  "description": "A setting to save your favourite quotes in chrome",
+  "manifest_version": 3,
+  "author": "Mert Arkin",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "background": {
+    "service_worker": "script.js"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "contextMenus"
+  ],
+  //Using content_scripts makes - !!! - service worker run forever/always ? find test and data - ANSWER : NO
+  "content_scripts": [
+    {
+      "matches": [ "<all_urls>" ],
+      "js": [ "contents.js"],
+      "run_at": "document_idle"
+    }
+  ]
+  /*
+  "content_security_policy": {
+
+  }
+  */
+
+}

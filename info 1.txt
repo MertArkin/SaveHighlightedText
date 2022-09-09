@@ -1,0 +1,167 @@
+
+
+
+content scripts (runs in website bg - access to dom)
+
+- can it use local sotorage ? no - only chrome local — through api
+
+- can send and receive messages ?
+
+receive - yes
+
+send - 
+
+
+
+background scripts (service workers, get trigerred by actions)
+
+- doesnt have access to local storage
+
+- can send and receive messages ?
+
+
+receive -
+
+Send - yes
+
+
+
+popup js (runs with extension)
+
+- can receive messages
+- only runs / updates when ext. icon is clicked
+- stores local storage in extension itself ??
+
+
+
+?
+grav it from backg script, whenever clicked ?
+Send background message to content script
+
+Retievw message and save it (content scripts local sotrage) — sitenin kenfisi storage ( cause it works on website)
+
+Print … (check if it works until here)
+
+Or save it in chrome local then retrieve whenever user clicks popup !! BURAYA BAK
+
+When also user clicks here (popup) save everything in extension local storage for persiatency
+
+
+
+
+NEXT STEP
+
+Data flow
+
+.
+How to get data withput clicking popup js - or flawlessly ??
+
+Save message elements in extension local sltrage
+
+Tehn display all in …
+[
+Or save and render everything through content js - simce it will work every time user saves smh
+Save to local storage and change dom elemtns - when popup is clicked just update the ui
+- then save everythin on local website and acces in matching urls
+
+after saving also message everything ??
+so when popup is clicked it can take them ?
+
+Try this to get saved content copy i into eztensions local one and display ?
+]
+
+
+
+**** Use chrome.local instead when passing contentjs to popup js !!!
+
+
+^ if not clicked does it still retrieve data ?
+amd re runs popup js and renders whenever clicked ??
+
+Or save it in localstoraeg by message ??
+
+Or a button to print everythin gaaved on the website ??
+so can interact with content scrpt
+
+
+
+popup local storage saves in extension
+
+content local sotrage (can you access ?) saves in the website ypure on - the website you want the code to be injected to
+
+
+
+
+
+[
+
+turn fetaure into bug
+
+bug into feature 
+
+Mert quote ?
+
+
+]
+
+
+
+
+/*
+    2 way port 
+    so you can set to storage when contetx menu item is click in bg.js
+
+    |
+
+    set chrome storage (thrugh api)
+
+    then when chnaged coppy it to local sotrage somehow (onchnage ??)
+    what is the dtaa flow on this one
+    --> --> -->
+
+    https://www.freecodecamp.org/news/chrome-extension-message-passing-essentials/
+
+ */
+
+
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+TESTED AN PRINTS ↓
+
+
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+
+var a = [{id:1, 1:"x"},{id:2, 2:"y"},{id:3, 3:"z"}]
+
+console.log(a);
+console.log(a.length);
+
+if(a.length == 2) {
+    console.log("Welcome to Programiz!");
+}
+
+
+
+↓
+
+
+
+
+node /tmp/xDzzoHCIuC.js
+[ { '1': 'x', id: 1 }, { '2': 'y', id: 2 }, { '3': 'z', id: 3 } ]
+3
+
+
+
+
+
+
+
+
+
+
