@@ -33,11 +33,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //var getTexts = JSON.parse(localStorage.getItem('savedText')) || [];
 
+    /*
+    chrome.storage.local.get(['data'], function (result) {
+        console.log(result.data);
 
-
-    var getTexts = JSON.parse(localStorage.getItem('savedText')) || [];
-    console.log(getTexts);
-
+    });
+ */
 
 
 
@@ -111,13 +112,45 @@ document.addEventListener('DOMContentLoaded', function () {
         //returnSavedTexts();
     //});
 
+
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, { todo: "MERT" }, function (response) {
+            if (!chrome.runtime.lastError) {
+
+                //make sure you always get the res element which is the one you send from content script
+                console.log(response.res);
+
+                /*
+                var a = JSON.parse(response);
+                console.log(a);
+                console.log("THE LENGTH IS: " + a.length);
+
+                //localStorage.setItem('savedText', response.res);
+                //var b = localStorage.getItem('savedText');
+                //var c = JSON.parse(b);
+                //console.log(b);
+                //console.log(c);
+
+                //renderSavedItems(c);
+                
+                */
+            }
+        });
+    });
+
+
+
     /*
+    //this works with content script - so just set data to local storage of extension and boom - retrieve and render !
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         chrome.tabs.sendMessage(tabs[0].id, { todo: "MERT" }, function (response) {
             console.log(response);
         });
 
     });
+    */
+
+
     /*
     chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
@@ -185,9 +218,10 @@ document.addEventListener('DOMContentLoaded', function () {
             ul.appendChild(li);
 
             //console.log("count of li items is: " + i);
-            let data_to_add = JSON.stringify(item.saved_data).replace(/"/g, '');
+            //let data_to_add = JSON.stringify(item.saved_data).replace(/"/g, '');
             //console.log(item);
-            li.innerHTML += data_to_add;
+            //li.innerHTML += data_to_add;
+            li.innerHTML += item.saved_data;
 
             //Add break tags between elements
             ul.appendChild(document.createElement('br'));

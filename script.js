@@ -57,7 +57,7 @@ chrome.contextMenus.onClicked.addListener(function (clickText) {
 
     //console.log(clickText.pageUrl);
     var data = new Visited(clickText.pageUrl, clickText.selectionText);
-    savedTexts.push(data);
+    //savedTexts.push(data);
 
     /*
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
@@ -93,15 +93,42 @@ chrome.contextMenus.onClicked.addListener(function (clickText) {
     //chrome.storage.local.set({ 'savedText': savedTexts });
 
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, savedTexts, function (response) {
+        chrome.tabs.sendMessage(tabs[0].id, Array(data), function (response) {
 
             //check for error below so that you can 
-            //if (!chrome.runtime.lastError) {
-            console.log(JSON.stringify(response.res));
+            if (!chrome.runtime.lastError) {
+                console.log(JSON.stringify(response.res));
+            }
         });
     });
 
+
+
 });
+
+
+
+chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+    /*
+    console.log(tabId);
+    console.log(changeInfo);
+    console.log(tab);
+    */
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, { todo: "sex" }, function (response) {
+            if (!chrome.runtime.lastError) {
+
+                //receive sex
+                console.log(JSON.stringify(response.res));
+            }
+        });
+    });
+});
+
+
+
+
+
 
 /*
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
@@ -115,20 +142,20 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 */
 
         //Maybe just use local storage - ?? or need it for context menu bak !!!
-        /*
+/*
 
-        //console log stuff so you see if they are being duplicated
-        //console.log('Value is set to ' + clickText.selectionText 
-        //console.log(JSON.stringify(savedTexts));
-        //console.log(savedTexts.toString());
-        //console.log(savedTexts);
-        //});
+//console log stuff so you see if they are being duplicated
+//console.log('Value is set to ' + clickText.selectionText 
+//console.log(JSON.stringify(savedTexts));
+//console.log(savedTexts.toString());
+//console.log(savedTexts);
+//});
 
-        //getsavedText();
-    });
-    //console.log(savedTexts.toString());
+//getsavedText();
+});
+//console.log(savedTexts.toString());
 
-    */
+*/
 
 
 

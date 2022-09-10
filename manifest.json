@@ -18,14 +18,16 @@
     "storage",
     "contextMenus"
   ],
+
   //Using content_scripts makes - !!! - service worker run forever/always ? find test and data - ANSWER : NO
   "content_scripts": [
     {
       "matches": [ "<all_urls>" ],
-      "js": [ "contents.js"],
+      "js": [ "contents.js" ],
       "run_at": "document_idle"
     }
   ]
+
   /*
   "content_security_policy": {
 

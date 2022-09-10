@@ -193,10 +193,17 @@ git remote add origin https://github.com/MertArkin/SaveHighlightedText.git
 [
 the push commands changed, i was able to push with 
 
+
+git push 
+
+but look later how can you use / change branch / master - main ??
+(look also chrome bookmarks related to this)
+
+
 ]
 
 
-
+if you add smh new on github itself - do pull request to update, then push again - (but from git add . )
 
 
 
