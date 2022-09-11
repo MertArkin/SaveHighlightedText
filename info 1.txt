@@ -127,6 +127,38 @@ Mert quote ?
 
 
 
+
+
+
+
+when ext clicked gets from context menu and siplays in extension
+
+
+what is user chooses higlights on e web page bu doesnt clcik the eztension
+
+
+- maybe save data on the webste itself / or is it publicly shared local sptrgae - or per web page
+
+??
+
+Then when user goes on that webste - take everything from local st and dispkay in ext
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 --------------------------------------------------------------------------------------------------
 
 

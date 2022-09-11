@@ -108,6 +108,7 @@ chrome.contextMenus.onClicked.addListener(function (clickText) {
 
 
 
+
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     /*
     console.log(tabId);

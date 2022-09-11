@@ -10,10 +10,19 @@
     <div class="info">
         <p>Higlight a text with your cursor and choose "SaveOn" option to save it in your directory.</p>
     </div>
+    <div id="buttons">
+        <button type="button" id="clear">Click to clear list</button>
+        <br />
+        <br />
+        <label for="title">Add title bar</label>
+        <input id="title" />
+        <button type="button" id="add_title">Add title</button>
+    </div>
     <div class="show_text"></div>
-    <button type="button" id="clear">Click to clear list</button>
+
 </body>
 
+</html>
 <!-- Use 2 scripts which one runs in the background and the other is just an external script(js) file -->
 
 <!-- We dont need to include it since it runs in manifest as background worker -->
@@ -21,4 +30,3 @@
 <!-- Use the normal script file to -->
 <script src="popup.js"></script>
 
-</html>

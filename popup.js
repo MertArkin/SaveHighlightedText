@@ -120,20 +120,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 //make sure you always get the res element which is the one you send from content script
                 console.log(response.res);
 
-                /*
-                var a = JSON.parse(response);
+                var a = JSON.stringify(response.res);
                 console.log(a);
                 console.log("THE LENGTH IS: " + a.length);
 
-                //localStorage.setItem('savedText', response.res);
-                //var b = localStorage.getItem('savedText');
-                //var c = JSON.parse(b);
-                //console.log(b);
-                //console.log(c);
+                var b = JSON.parse(a);
 
-                //renderSavedItems(c);
+                /*
                 
+                localStorage.setItem('savedText', response.res);
+                var b = localStorage.getItem('savedText');
+                var c = JSON.parse(b);
+                console.log(b);
+                console.log(c);
+          
                 */
+
+                renderSavedItems(b);
+
             }
         });
     });
@@ -204,6 +208,26 @@ document.addEventListener('DOMContentLoaded', function () {
         */
     });
 
+    document.getElementById('add_title').addEventListener("click", function () {
+
+        //Try getting the titles then re render them when domcontent loads - which is when extension clciked 
+            var parent = document.getElementById("buttons");
+            var input = document.createElement("input");
+             input.setAttribute("type", "text");
+            parent.appendChild(input);
+    });
+
+        //stop sw fast so it doesnt copy :D race with time ?
+        /*
+        navigator.serviceWorker.getRegistrations().then(function (registrations) {
+            for (let registration of registrations) {
+                registration.unregister()
+            }
+        });
+        */
+
+
+
 
     function renderSavedItems(text_items) {
         //Display quickly in a form of list
@@ -245,6 +269,9 @@ document.addEventListener('DOMContentLoaded', function () {
     */
 
 });
+
+
+
 
 /*
 document.getElementById("show_button").addEventListener("click", getsavedText);
